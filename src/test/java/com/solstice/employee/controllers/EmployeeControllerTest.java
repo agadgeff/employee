@@ -34,12 +34,11 @@ public class EmployeeControllerTest {
 
     @Test
     public void retrievingValidEmployeeByIdShouldReturnEmployee() throws Exception {
-  /*      final Employee expectedEmployee = new Employee(111, "John", "Smith", 12345,
+        final Employee expectedEmployee = new Employee(111, "John", "Smith", 12345,
                 "Chicago", "Technical Consultant", "jsmith@solstice.com", "file:///localhost/jsmith.jpg");
         BDDMockito.given(service.getEmployeeById(111)).willReturn(expectedEmployee);
         String expectedJson = mapper.writeValueAsString(expectedEmployee);
 
-        mockMvc.perform(get("/111")).andExpect(status().isOk()).andExpect(content().json(expectedJson));*/
-        assertTrue(true);
+        mockMvc.perform(get("/111")).andExpect(status().isOk()).andExpect(content().json(expectedJson));
     }
 }

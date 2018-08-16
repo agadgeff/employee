@@ -8,10 +8,10 @@ spring:
     password: localPass
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
     properties:
       hibernate:
-        dialect: "org.hibernate.dialect.MySQLInnoDBDialect"
+        dialect: "org.hibernate.dialect.MySQL57Dialect"
 
 #  spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 #  management.endpoints.web.exposure.include=*
