@@ -1,7 +1,7 @@
 package com.solstice.employee.services;
 
 import com.solstice.employee.data.entities.Employee;
-import com.solstice.employee.data.repository.EmployeeRepository;
+import com.solstice.employee.data.repositories.EmployeeRepository;
 import com.solstice.employee.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

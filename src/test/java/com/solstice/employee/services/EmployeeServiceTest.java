@@ -1,9 +1,8 @@
-package com.solstice.employee;
+package com.solstice.employee.services;
 
 import com.solstice.employee.data.entities.Employee;
-import com.solstice.employee.data.repository.EmployeeRepository;
+import com.solstice.employee.data.repositories.EmployeeRepository;
 import com.solstice.employee.exceptions.ResourceNotFoundException;
-import com.solstice.employee.services.EmployeeService;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -16,6 +15,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 
 public class EmployeeServiceTest {
@@ -50,22 +50,16 @@ public class EmployeeServiceTest {
     }
 
     @Test
+    public void getEmployeesWithoutAnyPresentIdsShouldReturnEmptyList() {
+        assertTrue(service.getEmployeesForIds(Arrays.asList(1, 2, 3)).isEmpty());
+    }
+
+    @Test
     public void getEmployeesWithPresentIdsShouldReturnMatchingEmployees() {
         final List<Integer> expectedIds = EXPECTED_EMPLOYEES.stream().map(Employee::getId).collect(Collectors.toList());
         when(repository.findAllById(expectedIds)).thenReturn(EXPECTED_EMPLOYEES);
 
         final List<Employee> foundEmployees = service.getEmployeesForIds(expectedIds);
         assertEquals(EXPECTED_EMPLOYEES, foundEmployees);
-    }
-
-
-    @Test
-    // TODO
-    public void getEmployeesWithOnePresentIdShouldReturnMatchingEmployee() {
-//        final List<Integer> expectedIds = Collections.singletonList(EXPECTED_EMPLOYEES.get(0).getId());
-//        when(repository.findAllById(expectedIds)).thenReturn(EXPECTED_EMPLOYEES);
-//
-//        final List<Employee> foundEmployees = service.getEmployeesForIds(expectedIds);
-//        assertEquals(EXPECTED_EMPLOYEES, foundEmployees);
     }
 }

@@ -1,7 +1,7 @@
-package com.solstice.employee;
+package com.solstice.employee.data.repositories;
 
 import com.solstice.employee.data.entities.Employee;
-import com.solstice.employee.data.repository.EmployeeRepository;
+import com.solstice.employee.data.repositories.EmployeeRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
