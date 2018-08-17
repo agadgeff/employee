@@ -3,12 +3,13 @@ spring:
     name: employee
   datasource:
     platform: mysql
-    url: "jdbc:mysql://localhost:3306/solsticeu?useSSL=false"
+    type: com.mysql.cj.jdbc.MysqlDataSource
+    url: "jdbc:mysql://localhost:3306/solsticeu?useSSL=false&serverTimezone=UTC"
     username: localUser
     password: localPass
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     properties:
       hibernate:
         dialect: "org.hibernate.dialect.MySQL57Dialect"

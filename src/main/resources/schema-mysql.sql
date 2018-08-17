@@ -2,7 +2,7 @@
 --   DEFAULT CHARACTER SET utf8
 --   COLLATE utf8_general_ci;
 
-CREATE TABLE `employee` (
+CREATE TABLE IF NOT EXISTS `employee` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL,
   `employee_number` int(11) NOT NULL,
